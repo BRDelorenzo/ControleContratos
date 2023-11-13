@@ -1,0 +1,38 @@
+  .card-color {
+    background-image: linear-gradient(to right, #89CAFF, #6589FF);
+    display: block;
+    color: $primary-color;
+    font-size: 1rem;
+    cursor: $cursor;
+    box-shadow: 0 5px 20px #89caff94;
+    transition: box-shadow .3s ease-in-out;
+  }
+
+  .card-color {
+    width: 450;
+    border: none;
+    padding: 14px;
+    border-radius: 3px;
+    margin: auto;
+    
+  }
+
+  button {
+    width: fit-content;
+    border: none;
+    padding: 14px;
+    border-radius: 3px;
+    margin: auto;
+    display: block;
+    
+  }
+
+button {
+    background-image: linear-gradient(to right, #89CAFF, #6589FF);
+    display: block;
+    color: $primary-color;
+    font-size: 1rem;
+    cursor: $cursor;
+    box-shadow: 0 5px 20px #89caff94;
+    transition: box-shadow .3s ease-in-out;
+  }
