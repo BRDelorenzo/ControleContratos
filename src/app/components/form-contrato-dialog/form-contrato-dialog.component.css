@@ -1,38 +1,26 @@
-  .card-color {
-    background-image: linear-gradient(to right, #89CAFF, #6589FF);
-    display: block;
-    color: $primary-color;
-    font-size: 1rem;
-    cursor: $cursor;
-    box-shadow: 0 5px 20px #89caff94;
-    transition: box-shadow .3s ease-in-out;
-  }
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
 
-  .card-color {
-    width: 450;
-    border: none;
-    padding: 14px;
-    border-radius: 3px;
-    margin: auto;
-    
-  }
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px;
+}
 
-  button {
-    width: fit-content;
-    border: none;
-    padding: 14px;
-    border-radius: 3px;
-    margin: auto;
-    display: block;
-    
-  }
+mat-form-field {
+  width: 100%;
+}
 
 button {
-    background-image: linear-gradient(to right, #89CAFF, #6589FF);
-    display: block;
-    color: $primary-color;
-    font-size: 1rem;
-    cursor: $cursor;
-    box-shadow: 0 5px 20px #89caff94;
-    transition: box-shadow .3s ease-in-out;
-  }
+  min-width: 100px;
+}
+
+.mat-dialog-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}

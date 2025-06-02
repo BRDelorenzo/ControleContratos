@@ -1,9 +1,59 @@
-<h1 mat-dialog-title>Hi Giovanni</h1>
-<div mat-dialog-actions>
-    <mat-card class="card-color">
-        <mat-card-content>Simple card</mat-card-content>
-    </mat-card>
-</div>
-<div>
-  <button mat-button (click)="cancel()">Cancelar</button>
-</div>
+<h2 mat-dialog-title>Cadastro de Contrato</h2>
+<mat-dialog-content>
+  <form [formGroup]="contratoForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Número do Contrato</mat-label>
+        <input matInput formControlName="numeroContrato" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Nome do Contratado</mat-label>
+        <input matInput formControlName="nomeContratado" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>CNPJ do Contratado</mat-label>
+        <input matInput formControlName="cnpjContratado" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo de Contrato</mat-label>
+        <mat-select formControlName="tipoContrato" required>
+          <mat-option *ngFor="let tipo of tiposContrato" [value]="tipo">
+            {{tipo}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Valor do Contrato</mat-label>
+        <input matInput type="number" formControlName="valorContrato" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Data de Início</mat-label>
+        <input matInput [matDatepicker]="pickerInicio" formControlName="dataInicio" required>
+        <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+        <mat-datepicker #pickerInicio></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Data de Fim</mat-label>
+        <input matInput [matDatepicker]="pickerFim" formControlName="dataFim" required>
+        <mat-datepicker-toggle matSuffix [for]="pickerFim"></mat-datepicker-toggle>
+        <mat-datepicker #pickerFim></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput formControlName="descricao" required rows="4"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="button-container">
+      <button mat-button type="button" (click)="cancel()">Cancelar</button>
+      <button mat-button color="primary" type="submit" [disabled]="!contratoForm.valid">Salvar</button>
+    </div>
+  </form>
+</mat-dialog-content>
